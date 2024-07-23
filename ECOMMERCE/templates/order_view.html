@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container-fluid" style="background-color:#7ac8f5;">
+<br><br>
+    <h4 class="text-center fw-bold mt-5" style="color:black;"><u>Name of Customer:{{u}}</u></h4>
+    <br><br>
+    {% for i in customer %}
+
+  <div class="row mt-5">
+    <div class="col-5">
+      <img src="{{i.product.image.url}}" width="50%" height="200px;">
+    </div>
+    <div class="col-7" style="color:black;">
+            <h5>{{i.product.name}}</h5>
+            <h5>{{i.product.price}}</h5>
+            <h5>{{i.ordered_date}}</h5>
+            <h5>{{i.delivery_status}}</h5>
+
+    </div>
+  </div>
+    {% endfor %}
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<center>
+<h2> Payment Successfully</h2>
+
+    <form action="http://127.0.0.1:8002/cart/status/{{payment.name}}" method="POST">
+        {% csrf_token %}
+<script
+    src="https://checkout.razorpay.com/v1/checkout.js"
+    data-key="rzp_test_qHyxGMysuy97Oy"
+    data-amount="{{payment.amount}}"
+    data-currency="{{payment.currency}}"
+    data-order_id="{{payment.id}}"
+    data-buttontext="Pay with Razorpay"
+    data-name="SHOPMAX"
+    data-description="A Wild Sheep Chase is the third novel by Japanese author Haruki Murakami"
+    data-image="https://i.pinimg.com/originals/c1/92/9d/c1929d3492c2f64ab65b43808c072043.jpg"
+    data-prefill.name="{{payment.name}}"
+    data-prefill.email="abc@example.com"
+    data-theme.color="#F37254"
+></script>
+<input type="hidden" custom="Hidden Element" name="hidden"/>
+</form>
+
+</center>
+{% endblock %}

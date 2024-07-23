@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+{% if status == True %}
+<center>
+<div class="container">
+<i class="fa fa-check-circle" aria-hidden="true" style="font-size:80px; color: green;margin-left: 370px;"></i>
+<h3 style="color:green;margin-left:130px;">Thank you. Your payment was successful. </h3></div></center>
+{% else %}
+<h3 style="color:green;margin-left:130px;">Your Payment is Failed. Try Again</h3>
+{% endif %}
+
+{% endblock %}
